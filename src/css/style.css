@@ -1,0 +1,36 @@
+
+.flex{
+        display: flex;
+}
+.flex-wrap{
+        flex-wrap: wrap;
+}
+.good-answer{
+        height: 140px !important;
+        padding: 5px 5px !important;
+}
+.add-question{
+        border: 1px solid #26a69a ;
+        padding: 5px;
+        margin: 3px;
+}
+.add-question-title{
+        font-size: 18px;
+        font-weight: lighter;
+}
+.choice{
+        margin: 4px 0;
+}
+.drop-box{
+        background: #F8F8F8;
+        border: 5px dashed #DDD;
+        width: 170px;
+        height: 180px;
+        text-align: center;
+        padding: 50px 10px;
+        margin-left: 10px;
+}
+.dragover{
+        background: #DDD;
+        border: 5px solid #F8F8F8;
+}

@@ -1,0 +1,59 @@
+<div class="admin-page">
+    <!--{{vm.questions}}-->
+    <!--{{vm.newQuestion}}-->
+    <div class="row add-question">
+        <div class="addQuestion-question">
+            
+        </div>
+        <p class="add-question-title teal-text lighten-1">Ajouter une nouvelle question</p>
+        <form class="col s12" name="addQuestion">
+            <div class="row">
+                <div class="question input-field col s12 valign-wrapper">
+                    <input  id="question" type="text" class="validate" ng-model="vm.newQuestion.title">
+                    <label for="question">La question...</label>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="choice" ng-repeat="choice in vm.addChoiceModel track by $index" ng-class="{'green-text': vm.newQuestion.choices[$index].value}">
+                    
+                        <div class="input-field col s3">
+                            <input name="{{choice.name}}" type="checkbox" id="{{choice.name}}"  ng-model="vm.newQuestion.choices[$index].value"/>
+                            <label for="{{choice.name}}"  ng-class="{'green-text': vm.newQuestion.choices[$index].value}">Bonne réponse</label>
+                        </div>
+                        <div class="input-field col s7" ng-class="{'green-text': vm.newQuestion.choices[$index].value}">
+                            <input id="choix1" type="text" class="validate" ng-model="vm.newQuestion.choices[$index].choice" name="{{choice.name}}">
+                            <label for="choix1" ng-class="{'green-text': vm.newQuestion.choices[$index].value}">Choix {{choice.id}}</label>
+                        </div>
+                        <div class="icon-add-file col s2 center-align" ng-init="false" ng-click="vm.drop[$index] = !vm.drop[$index]">
+                            <i class="material-icons ">note_add</i>
+                            <p class="small">Ajouter fichier</p>
+                        </div>
+    {{vm.newQuestion.choice[$index].media.data}}
+                        <div class="drop-box col s12" ng-show="vm.drop[$index]" ngf-select ngf-drop ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"  ngf-pattern="vm.Fileformat" ng-model="vm.choice.files">
+                         {{choice.files.name}}
+                            <!--<div class="file-field input-field s4">-->
+                                <!--<div class="btn">-->
+                                    <!--<span>Chercher</span>-->
+                                    <!--<input type="file">-->
+                                <!--</div>-->
+                                <!--<div class="file-path-wrapper s4">-->
+                                    <!--<input placeholder="Vous pouvez déplacer votre fichier dans la zone grisée ou le chercher dans vos dossiers" class="file-path validate" type="text">-->
+                                <!--</div>-->
+                                <!--<div class=" s4">-->
+                                    <!--<audio src=""></audio>-->
+                                    <!--<video src=""></video>-->
+                                    <!--<img src="" alt="">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    
+
+                </div>
+            </div>
+            <div class="btn-create-question center">
+                <a class="waves-effect waves-light btn red lighten-1 right" ng-click="vm.addQuestion()"><i class="material-icons right">playlist_add</i>Ajouter</a>
+            </div>
+        </form>
+    </div>
+</div>
