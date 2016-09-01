@@ -1,1 +1,1 @@
-A quizz App with Angulars, Node, Express and Mangoose to MongoDB
+A quizz App with Angular, Node, Express and Mangoose to MongoDB
