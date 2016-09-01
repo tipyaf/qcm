@@ -30,8 +30,7 @@
                             <p class="small">Ajouter fichier</p>
                         </div>
     {{vm.newQuestion.choice[$index].media.data}}
-                        <div class="drop-box col s12" ng-show="vm.drop[$index]" ngf-select ngf-drop ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"  ngf-pattern="vm.Fileformat" ng-model="vm.choice.files">
-                         {{choice.files.name}}
+
                             <!--<div class="file-field input-field s4">-->
                                 <!--<div class="btn">-->
                                     <!--<span>Chercher</span>-->
@@ -46,7 +45,7 @@
                                     <!--<img src="" alt="">-->
                                 <!--</div>-->
                             <!--</div>-->
-                        </div>
+                        </droplet>
                     
 
                 </div>

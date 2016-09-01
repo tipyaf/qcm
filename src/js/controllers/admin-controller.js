@@ -58,8 +58,10 @@ qcmApp.controller("adminController", function($scope,$http, $timeout) {
 
     ];
 
-    $scope.$watch('vm.newQuestion.choices[$index].choice.media.data', function (newValue, oldValue) {
-        console.log(newValue)
+    $scope.$on('$dropletReady', function whenDropletReady() {
+        // Directive's interface is ready to be used..
+        // .
+        vm.interface.allowedExtensions([/.+/]);
     });
     $http.get('/api')
         .success(function (req) {
