@@ -92,8 +92,8 @@ qcmApp.controller("adminController", function($scope,$http, Upload) {
             });
     };
 
-    // TODO: add choices img download in newQuestion  & db
-
+    // TODO: add choices img download in db
+    // TODO: add correction in front & db
 
 
 });
