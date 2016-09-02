@@ -5,8 +5,8 @@ qcmApp.controller("adminController", function($scope,$http, $timeout) {
     var vm = this;
     vm.newQuestion =
     {
-        "label" : "e",
-        "title": "e",
+        "label" : "",
+        "title": "",
         "choices":
             [
                 {
