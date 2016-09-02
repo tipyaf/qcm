@@ -34,6 +34,9 @@
 }
 .choice{
         margin: 4px 0;
+        padding: 5px 3px !important;
+        border-bottom: 2px solid #dcdcdc;
+        min-height: 100px !important;
 }
 .margin-lie{
         margin: 2% 0 !important;

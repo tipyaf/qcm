@@ -1,5 +1,5 @@
 <div class="admin-page">
-    {{vm.questions}}
+    <!--{{vm.questions}}-->
     <!--{{vm.newQuestion}}-->
     <div class="row add-question">
         <div class="addQuestion-question">
@@ -13,9 +13,8 @@
                     <label for="question">La question...</label>
                 </div>
             </div>
-            
             <div class="row">
-                <div class="choice" ng-repeat="choice in vm.addChoiceModel track by $index"
+                <div class="choice col s12 " ng-repeat="choice in vm.addChoiceModel track by $index"
                      ng-class="{'teal-text lighten-1': vm.newQuestion.choices[$index].value}">
                     {{choice.media.data}}
                     
