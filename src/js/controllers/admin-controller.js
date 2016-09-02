@@ -1,7 +1,7 @@
 /**
  * Created by yannickbenchimol on 31/08/2016.
  */
-qcmApp.controller("adminController", function($scope,$http, Upload) {
+qcmApp.controller("adminController", function($scope,$http, $location, Upload) {
     var vm = this;
     vm.newQuestion =
     {
@@ -38,6 +38,20 @@ qcmApp.controller("adminController", function($scope,$http, Upload) {
                 }
             ]
     };
+    vm.upload = function (file) {
+        Upload.upload({
+            url: 'upload/url',
+            data: {file: file, 'username': vm.username}
+        }).then(function (res) {
+            console.log('Success ' + res.config.data.file.name + 'uploaded. Response: ' + res.data);
+            console.log(Upload)
+        }, function (res) {
+            console.log('Error status: ' + res.status);
+        }, function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
+    };
     //init "bonne réponse" to false
     vm.newQuestion.choices[0].value,
     vm.newQuestion.choices[1].value,
@@ -58,19 +72,7 @@ qcmApp.controller("adminController", function($scope,$http, Upload) {
 
     ];
 
-    vm.upload = function (file) {
-        Upload.upload({
-            url: 'upload/url',
-            data: {file: file, 'username': vm.username}
-        }).then(function (resp) {
-            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-        }, function (resp) {
-            console.log('Error status: ' + resp.status);
-        }, function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-        });
-    };
+
     $http.get('/api')
         .success(function (req) {
             vm.questions = req;
@@ -84,6 +86,7 @@ qcmApp.controller("adminController", function($scope,$http, Upload) {
         $http.post('/api', vm.newQuestion)
             .success(function (data) {
                 vm.newQuestion = data;
+
                 console.log(vm.newQuestion);
             })
             .error(function (data) {

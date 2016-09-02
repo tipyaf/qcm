@@ -68,15 +68,6 @@ router.route('/')
 
     });
 
-// router.route('/:question_label')
-//     .delete(function (req,res) {
-//         Question.remove({label: req.params.question_label}, function (err) {
-//             if(err){
-//                 res.send(err)
-//             }
-//             res.send({message: 'La question a été supprimée'})
-//         });
-//     });
 router.route('/:question_id')
     .delete(function (req,res) {
         Question.remove({_id: req.params.question_id}, function (err) {
