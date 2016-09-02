@@ -8,6 +8,14 @@
 .pointer:hover{
         cursor: pointer;
 }
+.grey-text-label{
+        color: #bfbfbf;
+ }
+.badge-style{
+        padding: 3px;
+        background-color: #b9b9b9;
+        border-radius: 50%;
+}
 .teal-border{
         border: 5px solid #26a69a !important;
 }
@@ -16,7 +24,7 @@
         padding: 5px 5px !important;
 }
 .add-question{
-        border: 1px solid #26a69a ;
+        border: 1px solid #26a69a;
         padding: 5px;
         margin: 3px;
 }
@@ -26,6 +34,9 @@
 }
 .choice{
         margin: 4px 0;
+}
+.margin-lie{
+        margin: 2% 0 !important;
 }
 .drop-box{
         display: flex;
