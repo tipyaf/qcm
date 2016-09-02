@@ -15,15 +15,15 @@
             </div>
                 
             <div class="row">
-                <div class="choice" ng-repeat="choice in vm.addChoiceModel track by $index" ng-class="{'green-text': vm.newQuestion.choices[$index].value}">
+                <div class="choice" ng-repeat="choice in vm.addChoiceModel track by $index" ng-class="{'teal-text lighten-1': vm.newQuestion.choices[$index].value}">
                     {{choice.media.data}}
                         <div class="input-field col s3">
                             <input name="{{choice.name}}" type="checkbox" id="{{choice.name}}"  ng-model="vm.newQuestion.choices[$index].value"/>
-                            <label for="{{choice.name}}"  ng-class="{'green-text': vm.newQuestion.choices[$index].value}">Bonne réponse</label>
+                            <label for="{{choice.name}}"  ng-class="{'teal-text lighten-1': vm.newQuestion.choices[$index].value}">Bonne réponse</label>
                         </div>
-                        <div class="input-field col s7" ng-class="{'green-text': vm.newQuestion.choices[$index].value}">
+                        <div class="input-field col s7" ng-class="{'teal-text lighten-1': vm.newQuestion.choices[$index].value}">
                             <input id="choix1" type="text" class="validate" ng-model="vm.newQuestion.choices[$index].choice" name="{{choice.name}}">
-                            <label for="choix1" ng-class="{'green-text': vm.newQuestion.choices[$index].value}">Choix {{choice.id}}</label>
+                            <label for="choix1" ng-class="{'teal-text lighten-1': vm.newQuestion.choices[$index].value}">Choix {{choice.id}}</label>
                         </div>
                         <div class="icon-add-file col s2 center-align" ng-init="false" ng-click="vm.drop[$index] = !vm.drop[$index]">
                             <i class="material-icons ">note_add</i>
@@ -35,14 +35,14 @@
                             
                             <div ngf-drop="upload($file)" class="drop-box col s12" ng-show="vm.drop[$index]"
                                  ngf-drag-over-class="'dragover'"
-                                 ngf-pattern="'image/*,application/pdf,audio/*,video/*'" ngf-resize="{width: 100, height:100}" ng-model="vm.file">
-                                <label>Glissez/Déposez le fichier ou cliquez ci-dessous pour selectionner un fichier dans votre ordinateur</label>
-                                <i class="material-icons pointer" ngf-select="upload($file)" ngf-pattern="'image/*,application/pdf,audio/*,video/*'" ngf-resize="{width: 100, height:100}" ng-model="vm.file" ng-if="vm.file == indifined">note_add</i>
+                                 ngf-pattern="'image/*,application/pdf,audio/*,video/*'" ngf-resize="{width: 100, height:100}" ng-model="vm.file[$index]" ng-class="{'teal-border': vm.newQuestion.choices[$index].value}">
+                                <label>Glissez/Déposez le fichier ou cliquez ci-dessous pour selectionner un fichier de votre ordinateur</label>
+                                <i class="material-icons pointer" ngf-select="upload($file)" ngf-pattern="'image/*,application/pdf,audio/*,video/*'" ngf-resize="{width: 100, height:100}" ng-model="vm.file[$index]" ng-if="vm.file[$index] == indifined">note_add</i>
                                 <div ngf-no-file-drop ng-model="vm.file">Glisser/Déposer ne fonctionne pas avec votre navigateur</div>
-                                {{vm.file.name}}
-                                <img ngf-thumbnail="vm.file">
-                                <audio controls ngf-src="vm.file"></audio>
-                                <video controls ngf-src="vm.file" class="video-preview"></video>
+                                {{vm.file[$index].name}}
+                                <img ngf-thumbnail="vm.file[$index]">
+                                <audio controls ngf-src="vm.file[$index]"></audio>
+                                <video controls ngf-src="vm.file[$index]" class="video-preview"></video>
                             </div>
                     
                       
