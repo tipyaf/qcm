@@ -5,10 +5,14 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     path = require('path'),
+    mediaSchema = mongoose.Schema({
+        contentType: String,
+        data: Buffer
+    }),
     choicesSchema = mongoose.Schema({
         id: Number,
         choice: String,
-        media: {contentType: String, data: Buffer},
+        media: [mediaSchema],
         value: Boolean
     },{_id : false}),
     questionsSchema = mongoose.Schema({

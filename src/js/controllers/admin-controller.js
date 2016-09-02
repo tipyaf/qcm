@@ -5,8 +5,8 @@ qcmApp.controller("adminController", function($scope,$http, $timeout) {
     var vm = this;
     vm.newQuestion =
     {
-        "label" : "",
-        "title": "",
+        "label" : "e",
+        "title": "e",
         "choices":
             [
                 {
@@ -66,7 +66,7 @@ qcmApp.controller("adminController", function($scope,$http, $timeout) {
     $http.get('/api')
         .success(function (req) {
             vm.questions = req;
-            // console.log(vm.questions)
+            console.log(vm.questions)
         })
         .error(function (req) {
             console.log('json not find' +  req)
