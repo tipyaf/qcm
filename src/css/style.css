@@ -5,6 +5,9 @@
 .flex-wrap{
         flex-wrap: wrap;
 }
+.pointer:hover{
+        cursor: pointer;
+}
 .good-answer{
         height: 140px !important;
         padding: 5px 5px !important;
@@ -22,6 +25,8 @@
         margin: 4px 0;
 }
 .drop-box{
+        display: flex;
+        flex-direction: column;
         background: #F8F8F8;
         border: 5px dashed #DDD;
         width: 170px;
@@ -29,8 +34,13 @@
         text-align: center;
         padding: 50px 10px;
         margin-left: 10px;
+        justify-content: center;
+        align-items: center;
 }
 .dragover{
         background: #DDD;
         border: 5px solid #F8F8F8;
+}
+.video-preview{
+        width: 100px;
 }

@@ -1,7 +1,7 @@
 /**
  * Created by yannickbenchimol on 31/08/2016.
  */
-qcmApp.controller("adminController", function($scope,$http, $timeout) {
+qcmApp.controller("adminController", function($scope,$http, Upload) {
     var vm = this;
     vm.newQuestion =
     {
@@ -58,11 +58,19 @@ qcmApp.controller("adminController", function($scope,$http, $timeout) {
 
     ];
 
-    $scope.$on('$dropletReady', function whenDropletReady() {
-        // Directive's interface is ready to be used..
-        // .
-        vm.interface.allowedExtensions([/.+/]);
-    });
+    vm.upload = function (file) {
+        Upload.upload({
+            url: 'upload/url',
+            data: {file: file, 'username': vm.username}
+        }).then(function (resp) {
+            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+        }, function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
+    };
     $http.get('/api')
         .success(function (req) {
             vm.questions = req;

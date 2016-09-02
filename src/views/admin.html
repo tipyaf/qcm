@@ -30,23 +30,22 @@
                             <p class="small">Ajouter fichier</p>
                         </div>
 
-                        <div class="drop-box col s12" ng-show="vm.drop[$index]">
-                          
-                            <div class="file-field input-field s4">
-                                <div class="btn">
-                                    <span>Chercher</span>
-                                    <input type="file" ng-model="vm.newQuestion.choices[$index].media.data.data">
-                                </div>
-                                <div class="file-path-wrapper s4">
-                                    <input placeholder="Vous pouvez déplacer votre fichier dans la zone grisée ou le chercher dans vos dossiers" class="file-path validate" type="text">
-                                </div>
-                                <div class=" s4">
-                                    <audio src=""></audio>
-                                    <video src=""></video>
-                                    <img src="" alt="">
-                                </div>
+                        
+                           
+                            
+                            <div ngf-drop="upload($file)" class="drop-box col s12" ng-show="vm.drop[$index]"
+                                 ngf-drag-over-class="'dragover'"
+                                 ngf-pattern="'image/*,application/pdf,audio/*,video/*'" ngf-resize="{width: 100, height:100}" ng-model="vm.file">
+                                <label>Glissez/Déposez le fichier ou cliquez ci-dessous pour selectionner un fichier dans votre ordinateur</label>
+                                <i class="material-icons pointer" ngf-select="upload($file)" ngf-pattern="'image/*,application/pdf,audio/*,video/*'" ngf-resize="{width: 100, height:100}" ng-model="vm.file" ng-if="vm.file == indifined">note_add</i>
+                                <div ngf-no-file-drop ng-model="vm.file">Glisser/Déposer ne fonctionne pas avec votre navigateur</div>
+                                {{vm.file.name}}
+                                <img ngf-thumbnail="vm.file">
+                                <audio controls ngf-src="vm.file"></audio>
+                                <video controls ngf-src="vm.file" class="video-preview"></video>
                             </div>
-                        </div>
+                    
+                      
                     
 
                 </div>
