@@ -34,8 +34,8 @@
         font-feature-settings: 'liga';
 }
 .swiper-container {
-        width: 600px;
-        height: 300px;
+        width: 100%;
+        height: 80vh;
 }
 
 .flex{
@@ -110,29 +110,42 @@
 
 /*----------question card---------*/
 .qcm-box{
-        width: 30%;
-        height: 80vh;
+        /*min-width: 30%;*/
+        /*height: 80vh;*/
         border: 1px solid lightgrey;
 }
 .question-content{
-       min-height: 30%;
+       min-height: 15rem;
         background-color: #26a69a;
         color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 .question-content h4{
         margin: 0;
         padding: 5px;
 }
 .choices-box{
-        max-height: 57%;
-        min-height: 57%;
+        max-height: 30rem;
+        min-height: 30rem;
+        border-bottom: 1px solid lightgray;
+}
+.choices-box p{
+        min-height: 6rem;
+        display: flex;
+        align-items: center;
         border-bottom: 1px solid lightgray;
 }
 .btn-change-question{
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        padding: 0 1rem;
 }
 .btn-change-question i{
         border-radius: 50%;
+}
+.box33 {
+        min-width: 33.3333%;
 }
