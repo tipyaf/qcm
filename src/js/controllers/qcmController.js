@@ -29,4 +29,5 @@ qcmApp.controller("qcmController", function($scope, $http) {
             console.log('slideChangeStart');
         });
     };
+    // TODO: swiper issue: no slider move before resize window
 });
