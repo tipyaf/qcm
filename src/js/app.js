@@ -6,7 +6,7 @@ var qcmApp = angular.module("qcmApp", ['ui.router', 'ngFileUpload']);
 qcmApp.config(function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/admin");
+    $urlRouterProvider.otherwise("/qcm");
     //
     // Now set up the states
     $stateProvider
@@ -14,6 +14,13 @@ qcmApp.config(function($stateProvider, $urlRouterProvider) {
             url: "/admin",
             templateUrl: "views/admin.html",
             controller: "adminController",
+            controllerAs: "vm"
+        })
+    $stateProvider
+        .state('qcm', {
+            url: "/qcm",
+            templateUrl: "views/qcm.html",
+            controller: "qcmController",
             controllerAs: "vm"
         })
 

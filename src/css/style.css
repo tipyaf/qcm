@@ -1,3 +1,38 @@
+@font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://localhost:3000/MaterialIcons-Regular.eot); /* For IE6-8 */
+        src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(https://localhost:3000/MaterialIcons-Regular.woff2) format('woff2'),
+        url(https://localhost:3000/MaterialIcons-Regular.woff) format('woff'),
+        url(https://localhost:3000/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+}
 
 .flex{
         display: flex;
@@ -64,4 +99,33 @@
 }
 .anim{
         transition: all 1s;
+}
+
+/*----------question card---------*/
+.qcm-box{
+        width: 30%;
+        height: 80vh;
+        border: 1px solid lightgrey;
+}
+.question-content{
+       min-height: 30%;
+        background-color: #26a69a;
+        color: white;
+}
+.question-content h4{
+        margin: 0;
+        padding: 5px;
+}
+.choices-box{
+        max-height: 57%;
+        min-height: 57%;
+        border-bottom: 1px solid lightgray;
+}
+.btn-change-question{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+}
+.btn-change-question i{
+        border-radius: 50%;
 }
