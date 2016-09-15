@@ -33,6 +33,10 @@
         /* Support for IE. */
         font-feature-settings: 'liga';
 }
+.swiper-container {
+        width: 600px;
+        height: 300px;
+}
 
 .flex{
         display: flex;
@@ -95,7 +99,10 @@
 }
 
 .video-preview{
-        width: 100px;
+        max-width: 100px;
+}
+.drop-box audio{
+        max-width: 70%;
 }
 .anim{
         transition: all 1s;

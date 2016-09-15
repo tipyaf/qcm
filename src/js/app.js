@@ -1,7 +1,7 @@
 /**
  * Created by yannickbenchimol on 31/08/2016.
  */
-var qcmApp = angular.module("qcmApp", ['ui.router', 'ngFileUpload']);
+var qcmApp = angular.module("qcmApp", ['ui.router', 'ngFileUpload', 'ksSwiper']);
 
 qcmApp.config(function($stateProvider, $urlRouterProvider) {
     //

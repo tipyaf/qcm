@@ -27,6 +27,7 @@ qcmApp.controller("adminController", function($scope, $http, $location, Upload) 
                     },
                     "value": ""
                 },
+
                 {
                     "id": 3,
                     "choice": "",
@@ -38,11 +39,20 @@ qcmApp.controller("adminController", function($scope, $http, $location, Upload) 
                 }
             ]
     };
+
     vm.upload = function (file) {
         Upload.upload({
-            url: 'upload/url',
+            url: 'http://localhost:3000/upload',
             data: {file: file, 'username': vm.username}
-        }).then(function (res) {
+        })
+        // Upload.http({
+        //     url: '/api',
+        //     headers : {
+        //         'Content-Type': file.type
+        //     },
+        //     data: file
+        // })
+            .then(function (res) {
             console.log('Success ' + res.config.data.file.name + 'uploaded. Response: ' + res.data);
             console.log(Upload)
         }, function (res) {
@@ -86,11 +96,10 @@ qcmApp.controller("adminController", function($scope, $http, $location, Upload) 
         $http.post('/api', vm.newQuestion)
             .success(function (data) {
                 vm.newQuestion = data;
-
                 console.log(vm.newQuestion);
             })
-            .error(function (data) {
-                console.log('erreur  de post');
+            .error(function (err) {
+                console.log('erreur  de post', err);
 
             });
     };

@@ -18,7 +18,8 @@ var express = require('express'),
     questionsSchema = mongoose.Schema({
         title: String,
         choices: [choicesSchema],
-        label: String
+        label: String,
+        file: Buffer
     }),
     app = express(),
     port = process.env.PORT || 3000,
@@ -55,8 +56,6 @@ router.route('/')
         question.title = req.body.title;
         question.choices = req.body.choices;
         question.label = req.body.label;
-
-        // var qcm = new Qcm();
 
         question.save(function (err) {
             if(err){

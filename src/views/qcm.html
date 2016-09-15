@@ -1,16 +1,38 @@
 <div class="qcm-page">
-    <div class="qcm-box z-depth-2">
-        <div class="question-content"><h4>Question ?</h4></div>
-        <div class="choices-box">
-            <p>
+
+    
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="qcm-box z-depth-2">
+                <div class="question-content"><h4>Question ?</h4></div>
+                <div class="choices-box">
+                <p>
                 <input name="group1" type="radio" id="test1" />
                 <label for="test1">Choix</label>
-            </p>
+                </p>
+                </div>
+                <div class="btn-change-question flex">
+                <i class="material-icons medium waves-effect">keyboard_arrow_left</i>
+                <a class="btn-floating btn-medium waves-effect waves-light teal"><i class="material-icons">done</i></a>
+                <i class="material-icons medium waves-effect">keyboard_arrow_right</i>
+                </div>
+                </div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+       
         </div>
-        <div class="btn-change-question flex">
-            <i class="material-icons medium waves-effect">keyboard_arrow_left</i>
-            <a class="btn-floating btn-medium waves-effect waves-light teal"><i class="material-icons">done</i></a>
-            <i class="material-icons medium waves-effect">keyboard_arrow_right</i>
-        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
     </div>
 </div>
