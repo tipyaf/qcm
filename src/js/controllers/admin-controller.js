@@ -1,7 +1,7 @@
 /**
  * Created by yannickbenchimol on 31/08/2016.
  */
-qcmApp.controller("adminController", function($scope,$http, $location, Upload) {
+qcmApp.controller("adminController", function($scope, $http, $location, Upload) {
     var vm = this;
     vm.newQuestion =
     {
@@ -76,6 +76,7 @@ qcmApp.controller("adminController", function($scope,$http, $location, Upload) {
     $http.get('/api')
         .success(function (req) {
             vm.questions = req;
+
             console.log(vm.questions)
         })
         .error(function (req) {
