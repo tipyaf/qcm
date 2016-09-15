@@ -125,6 +125,7 @@
 .question-content h4{
         margin: 0;
         padding: 5px;
+        font-weight: 300;
 }
 .choices-box{
         max-height: 30rem;
@@ -152,3 +153,5 @@
 .index-question{
         text-align: center;
 }
+
+/*TODO: pb responsive*/
