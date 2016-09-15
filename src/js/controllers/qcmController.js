@@ -3,7 +3,7 @@
  */
 qcmApp.controller("qcmController", function($scope, $http) {
     var vm = this;
-
+    vm.nbQuestionInQcm = 5;
     $http.get('/api')
         .success(function (req) {
             vm.userQuestions = req;

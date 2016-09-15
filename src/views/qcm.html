@@ -16,7 +16,7 @@
     </ks-swiper-container>
 </div>
 <div class="btn-change-question flex">
-    <i class="material-icons medium waves-effect" ng-click="vm.prevQuestion()">keyboard_arrow_left</i>
-    <a class="btn-floating btn-medium waves-effect waves-light teal" ng-show="vm.swiper.activeIndex == 1" ><i class="material-icons">done</i></a>
-    <i class="material-icons medium waves-effect" ng-click="vm.nextQuestion()">keyboard_arrow_right</i>
+    <i class="material-icons medium waves-effect" ng-click="vm.prevQuestion()" ng-hide="vm.swiper.activeIndex <= 0">keyboard_arrow_left</i>
+    <a class="btn-floating btn-medium waves-effect waves-light teal" ng-show="vm.swiper.activeIndex == vm.nbQuestionInQcm -1" ><i class="material-icons">done</i></a>
+    <i class="material-icons medium waves-effect" ng-hide="vm.swiper.activeIndex >= vm.nbQuestionInQcm -1" ng-click="vm.nextQuestion()">keyboard_arrow_right</i>
 </div>
