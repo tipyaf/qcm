@@ -83,3 +83,5 @@ app.use('/api', router);
 app.listen(port, function () {
     console.log('Le serveur écoute le port: ' + port)
 });
+
+// TODO: ADD question in choice issue (don't always write it)

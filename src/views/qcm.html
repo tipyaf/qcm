@@ -1,7 +1,7 @@
 <div class="qcm-page">
 <!--{{vm.userQuestions.choices}}-->
     <!--{{vm.userQuestions}}-->
-    <ks-swiper-container swiper="vm.swiper" initial-slide="0" loop="false" show-nav-buttons="false" slides-per-view="1" space-between="10" pagination-clickable="true">
+    <ks-swiper-container swiper="vm.swiper" initial-slide="0" loop="false" show-nav-buttons="false" slides-per-view="1" space-between="10" pagination-clickable="true" on-ready="onReadySwiper(vm.swiper)" direction="horizontal" override-parameters="{'effect':'cube'}">
         <ks-swiper-slide class="swiper-slide" ng-repeat="userQuestion in vm.userQuestions">
             <div class="qcm-box z-depth-2">
                 <div class="question-content"><h4>{{userQuestion.title}}</h4></div>

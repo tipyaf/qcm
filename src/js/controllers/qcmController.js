@@ -21,7 +21,7 @@ qcmApp.controller("qcmController", function($scope, $http) {
     vm.prevQuestion = function(){
         vm.swiper.slidePrev();
         console.log(vm.swiper.activeIndex)
-    };
+};
 
     vm.onReadySwiper = function(swiper) {
         console.log('onReadySwiper');
@@ -29,5 +29,6 @@ qcmApp.controller("qcmController", function($scope, $http) {
             console.log('slideChangeStart');
         });
     };
-    // TODO: swiper issue: no slider move before resize window
+    // TODO: swiper issue: no slider move before resize window (test api native not directive)
+    // TODO: refresh swiper.activeIndex on slide change without button
 });
