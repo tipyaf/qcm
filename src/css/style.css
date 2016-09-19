@@ -33,9 +33,13 @@
         /* Support for IE. */
         font-feature-settings: 'liga';
 }
-.swiper-container {
-        width: 100%;
-        height: 80vh;
+body{
+        max-width: 2000px;
+        /*max-height: 1600px;*/
+}
+ks-swiper-slide {
+        max-width: 2000px;
+        /*height: 80vh;*/
 }
 
 .flex{
@@ -147,6 +151,7 @@
 }
 .btn-change-question i{
         border-radius: 50%;
+        background-color: rgba(72, 72, 72, 0.09)
 }
 .box33 {
         min-width: 33.3333%;

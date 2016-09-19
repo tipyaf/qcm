@@ -1,7 +1,7 @@
 <div class="qcm-page">
 <!--{{vm.userQuestions.choices}}-->
     <!--{{vm.userQuestions}}-->
-    <ks-swiper-container swiper="vm.swiper" initial-slide="0" loop="false" show-nav-buttons="false" slides-per-view="1" space-between="10" pagination-clickable="true" on-ready="onReadySwiper(vm.swiper)" direction="horizontal" override-parameters="{'effect':'cube'}">
+    <ks-swiper-container swiper="vm.swiper" initial-slide="0" loop="false" slides-per-view="1" space-between="10" pagination-clickable="true" on-ready="onReadySwiper(vm.swiper)" direction="horizontal">
         <ks-swiper-slide class="swiper-slide" ng-repeat="userQuestion in vm.userQuestions">
             <div class="qcm-box z-depth-2">
                 <div class="question-content"><h4>{{userQuestion.title}}</h4></div>
@@ -17,7 +17,7 @@
 </div>
 <div class="btn-change-question flex">
     <i class="material-icons medium waves-effect" ng-click="vm.prevQuestion()" ng-hide="vm.swiper.activeIndex <= 0">keyboard_arrow_left</i>
-    <a class="btn-floating btn-medium waves-effect waves-light teal" ng-show="vm.swiper.activeIndex == vm.nbQuestionInQcm -1" ><i class="material-icons">done</i></a>
+    <a class="btn-floating btn-medium waves-effect waves-light teal" ng-show="vm.swiper.activeIndex == vm.nbQuestionInQcm -1"><i class="material-icons">done</i></a>
     <i class="material-icons medium waves-effect" ng-hide="vm.swiper.activeIndex >= vm.nbQuestionInQcm -1" ng-click="vm.nextQuestion()">keyboard_arrow_right</i>
 </div>
 <div class="index-question">Question {{vm.swiper.activeIndex +1}} / {{vm.nbQuestionInQcm}}</div>
